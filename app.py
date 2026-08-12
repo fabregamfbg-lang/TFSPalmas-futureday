@@ -83,10 +83,6 @@ with col2:
         st.image(logo.jpg, width=180)
     else:
         st.markdown("### 🚀 Future Day")
-cd "C:\Users\fabio\Documents\Default Project"
-git add app.py
-git commit -m "Fix logo path and location URL"
-git push origin main
 
 st.markdown("""
 <div class="header-text">
