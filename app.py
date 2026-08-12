@@ -36,7 +36,7 @@ st.markdown("""
 
 # ---------- CONFIG ----------
 FORM_CSV = "respostas_future_day.csv"
-LOCATION_URL = "https://maps.app.goo.gl/SeuLinkDoGoogleMapsAqui"  # SUBSTITUA PELO SEU LINK
+LOCATION_URL = "https://goo.su/iQNN7P"  # SUBSTITUA PELO SEU LINK
 LOGO_PATH = "logo.png"  # COLOQUE SUA LOGO NA MESMA PASTA
 
 # ---------- FUNÇÕES ----------
@@ -113,7 +113,7 @@ Esse não vai ser um evento qualquer. Vai ser a chance do seu filho colocar a m�
 # ---------- QR CODE LOCALIZAÇÃO ----------
 st.markdown('<div class="qr-container">', unsafe_allow_html=True)
 st.markdown("### 📍 Localização do Evento")
-qr_img = generate_qr_code(https://goo.su/iQNN7P)
+qr_img = generate_qr_code("https://goo.su/iQNN7P")
 st.image(qr_img, width=200, caption="Escaneie para abrir no Google Maps")
 st.caption(f"[Abrir no Google Maps]({https://goo.su/iQNN7P})")
 st.markdown('</div>', unsafe_allow_html=True)
