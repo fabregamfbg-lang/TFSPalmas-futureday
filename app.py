@@ -79,8 +79,8 @@ init_csv()
 # ---------- HEADER ----------
 col1, col2, col3 = st.columns([1, 2, 1])
 with col2:
-    if os.path.exists(LOGO_PATH):
-        st.image(LOGO_PATH, width=180)
+    if os.path.exists(logo.jpg):
+        st.image(logo.jpg, width=180)
     else:
         st.markdown("### 🚀 Future Day")
 
@@ -105,7 +105,7 @@ Esse não vai ser um evento qualquer. Vai ser a chance do seu filho colocar a m�
 
 **E tem mais:** quem estiver presente garante acesso aos nossos **descontos de fundador**, uma condição exclusiva para as primeiras famílias que entrarem nessa história com a gente.
 
-**📍 Endereço:** R. Visc. de Taunay, 902 - Sl 06 - Atiradores, Joinville
+**📍 Endereço:** Pista do Antigo Aeroporto, próximo a Havan
 
 > **⚠️ IMPORTANTE:** AS INSCRIÇÕES OFICIAIS SERÃO REALIZADAS **2 DIAS ANTES DO EVENTO**
 """)
@@ -113,9 +113,9 @@ Esse não vai ser um evento qualquer. Vai ser a chance do seu filho colocar a m�
 # ---------- QR CODE LOCALIZAÇÃO ----------
 st.markdown('<div class="qr-container">', unsafe_allow_html=True)
 st.markdown("### 📍 Localização do Evento")
-qr_img = generate_qr_code(LOCATION_URL)
+qr_img = generate_qr_code(https://goo.su/iQNN7P)
 st.image(qr_img, width=200, caption="Escaneie para abrir no Google Maps")
-st.caption(f"[Abrir no Google Maps]({LOCATION_URL})")
+st.caption(f"[Abrir no Google Maps]({https://goo.su/iQNN7P})")
 st.markdown('</div>', unsafe_allow_html=True)
 
 # ---------- FORMULÁRIO ----------
