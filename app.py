@@ -79,10 +79,14 @@ init_csv()
 # ---------- HEADER ----------
 col1, col2, col3 = st.columns([1, 2, 1])
 with col2:
-    if os.path.exists(logo.jpg):
+    if os.path.exists("logo.jpg"):
         st.image(logo.jpg, width=180)
     else:
         st.markdown("### 🚀 Future Day")
+cd "C:\Users\fabio\Documents\Default Project"
+git add app.py
+git commit -m "Fix logo path and location URL"
+git push origin main
 
 st.markdown("""
 <div class="header-text">
