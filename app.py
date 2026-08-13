@@ -105,7 +105,7 @@ Esse não vai ser um evento qualquer. Vai ser a chance do seu filho colocar a m�
 
 **E tem mais:** quem estiver presente garante acesso aos nossos **descontos de fundador**, uma condição exclusiva para as primeiras famílias que entrarem nessa história com a gente.
 
-**📍 Endereço:** Pista do Antigo Aeroporto, próxima da Havan, Palmas.
+**📍 Endereço:** R. Visc. de Taunay, 902 - Sl 06 - Atiradores, Joinville
 
 > **⚠️ IMPORTANTE:** AS INSCRIÇÕES OFICIAIS SERÃO REALIZADAS **2 DIAS ANTES DO EVENTO**
 """)
@@ -174,24 +174,25 @@ with st.form("future_day_form", clear_on_submit=False):
             Fique de olho no celular! 📱
             """)
 
-# ---------- ADMIN (opcional - só aparece com senha) ----------
-with st.expander("🔐 Área Admin (visualizar respostas)"):
-    admin_pass = st.text_input("Senha admin", type="password", placeholder="Digite a senha para ver respostas")
-    if admin_pass == "futureday2024":  # ALTERE ESSA SENHA!
-        df = pd.read_csv(FORM_CSV)
-        st.metric("Total de inscrições", len(df))
-        st.dataframe(df, use_container_width=True, hide_index=True)
-        
-        csv = df.to_csv(index=False).encode('utf-8')
-        st.download_button(
-            "📥 Baixar CSV", 
-            csv, 
-            f"inscricoes_future_day_{datetime.now().strftime('%Y%m%d')}.csv",
-            "text/csv",
-            use_container_width=True
-        )
-    elif admin_pass:
-        st.error("Senha incorreta")
+# ---------- ADMIN (oculto - acessa via ?admin=1 na URL) ----------
+if st.query_params.get("admin") == "1":
+    with st.expander("🔐 Área Admin", expanded=True):
+        admin_pass = st.text_input("Senha admin", type="password", placeholder="Digite a senha")
+        if admin_pass == "futureday2024":  # ALTERE ESSA SENHA!
+            df = pd.read_csv(FORM_CSV)
+            st.metric("Total de inscrições", len(df))
+            st.dataframe(df, use_container_width=True, hide_index=True)
+            
+            csv = df.to_csv(index=False).encode('utf-8')
+            st.download_button(
+                "📥 Baixar CSV", 
+                csv, 
+                f"inscricoes_future_day_{datetime.now().strftime('%Y%m%d')}.csv",
+                "text/csv",
+                use_container_width=True
+            )
+        elif admin_pass:
+            st.error("Senha incorreta")
 
 # ---------- FOOTER ----------
 st.markdown("""
