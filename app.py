@@ -105,7 +105,7 @@ Esse não vai ser um evento qualquer. Vai ser a chance do seu filho colocar a m�
 
 **E tem mais:** quem estiver presente garante acesso aos nossos **descontos de fundador**, uma condição exclusiva para as primeiras famílias que entrarem nessa história com a gente.
 
-**📍 Endereço:** R. Visc. de Taunay, 902 - Sl 06 - Atiradores, Joinville
+**📍 Endereço:** Pista do Antigo Aeroporto, próxima da Havan, Palmas.
 
 > **⚠️ IMPORTANTE:** AS INSCRIÇÕES OFICIAIS SERÃO REALIZADAS **2 DIAS ANTES DO EVENTO**
 """)
