@@ -37,7 +37,8 @@ st.markdown("""
 # ---------- CONFIG ----------
 FORM_CSV = "respostas_future_day.csv"
 LOCATION_URL = "https://goo.su/iQNN7P"
-LOGO_PATH = "logo.jpg"  # COLOQUE SUA LOGO NA MESMA PASTA
+LOGO_PATH = "logo.jpg"
+ADMIN_PASSWORD = "futureday2024"  # ALTERE AQUI
 
 # ---------- FUNÇÕES ----------
 def init_csv():
@@ -105,7 +106,7 @@ Esse não vai ser um evento qualquer. Vai ser a chance do seu filho colocar a m�
 
 **E tem mais:** quem estiver presente garante acesso aos nossos **descontos de fundador**, uma condição exclusiva para as primeiras famílias que entrarem nessa história com a gente.
 
-**📍 Endereço:** Pista do Antigo Aeroporto, próxima da Havan, Palmas.
+**📍 Endereço:** R. Visc. de Taunay, 902 - Sl 06 - Atiradores, Joinville
 
 > **⚠️ IMPORTANTE:** AS INSCRIÇÕES OFICIAIS SERÃO REALIZADAS **2 DIAS ANTES DO EVENTO**
 """)
@@ -113,9 +114,9 @@ Esse não vai ser um evento qualquer. Vai ser a chance do seu filho colocar a m�
 # ---------- QR CODE LOCALIZAÇÃO ----------
 st.markdown('<div class="qr-container">', unsafe_allow_html=True)
 st.markdown("### 📍 Localização do Evento")
-qr_img = generate_qr_code("https://goo.su/iQNN7P")
+qr_img = generate_qr_code(LOCATION_URL)
 st.image(qr_img, width=200, caption="Escaneie para abrir no Google Maps")
-st.caption("[Abrir no Google Maps](https://goo.su/iQNN7P)")
+st.caption(f"[Abrir no Google Maps]({LOCATION_URL})")
 st.markdown('</div>', unsafe_allow_html=True)
 
 # ---------- FORMULÁRIO ----------
@@ -178,7 +179,7 @@ with st.form("future_day_form", clear_on_submit=False):
 if st.query_params.get("admin") == "1":
     with st.expander("🔐 Área Admin", expanded=True):
         admin_pass = st.text_input("Senha admin", type="password", placeholder="Digite a senha")
-        if admin_pass == "futureday2024":  # ALTERE ESSA SENHA!
+        if admin_pass == ADMIN_PASSWORD:
             df = pd.read_csv(FORM_CSV)
             st.metric("Total de inscrições", len(df))
             st.dataframe(df, use_container_width=True, hide_index=True)
